@@ -3,12 +3,12 @@
 /* Variáveis Globais (cores e fontes reutilizadas no CSS) */
 
 :root {
-    --color-primary: #4F46E5; /* cor principal */
+    --color-primary: #007bff; /*cor principal*/
     --color-primary-dark: #4339CA; /* versão escura */
-    --color-text: #1E1B2E; /* cor do texto principal */
-    --color-text-light: #6B7280; /* cor do texto secundário */
+    --color-text: #ffffff; /* cor do texto principal */
+    --color-text-light: #c5c5c5; /* cor do texto secundário */
     --color-border: #E5E7EB; /* cor da borda */
-    --color-bg: #FFF; /* cor de fundo */
+    --color-bg: #041430; /* cor de fundo */
     --font-main: 'Inter', sans-serif; /* fonte */
 }
 
