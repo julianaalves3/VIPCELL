@@ -1,205 +1,734 @@
-
-
-/* Variáveis Globais (cores e fontes reutilizadas no CSS) */
-
+/* =====================================================
+   VARIÁVEIS DE COR EXATAS DO LAYOUT VIPCELL
+   ===================================================== */
 :root {
-    --color-primary: #007bff; /*cor principal*/
-    --color-primary-dark: #4339CA; /* versão escura */
-    --color-text: #ffffff; /* cor do texto principal */
-    --color-text-light: #c5c5c5; /* cor do texto secundário */
-    --color-border: #E5E7EB; /* cor da borda */
-    --color-bg: #041430; /* cor de fundo */
-    --font-main: 'Inter', sans-serif; /* fonte */
+    --bg-top-bar: #030b14;
+    --bg-header: #061426;
+    --bg-navbar: #040e1a;
+    --bg-footer: #040e1a;
+    --blue-btn: #1677d4;
+    --blue-btn-hover: #1060ae;
+    --cyan-highlight: #38bdf8;
+    --bg-card-img: #f8fafc;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-card: #e2e8f0;
 }
 
-/* Reset básico: remove espaçamentos padrão do navegador */
 * {
-    margin: 0; /* Espaçamento externo */
-    padding: 0; /* Espaçamento interno */
-    box-sizing: border-box; /* padding e border não aumentam o tamanho do elemento */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: var(--font-main); /* Tipo da fonte */
+    background-color: #ffffff;
+    color: var(--text-main);
+    line-height: 1.45;
 }
 
-/* HEADER */
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.icon-xs { font-size: 15px; vertical-align: middle; }
+.icon-sm { font-size: 18px; vertical-align: middle; }
+
+/* =====================================================
+   1. BARRA SUPERIOR (TOP BAR)
+   ===================================================== */
+.top-bar {
+    background-color: var(--bg-top-bar);
+    color: #cbd5e1;
+    font-size: 11.5px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.top-bar-left,
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar .material-symbols-outlined {
+    color: #94a3b8;
+    margin-right: 4px;
+}
+
+.account-link:hover {
+    color: #ffffff;
+}
+
+/* =====================================================
+   2. CABEÇALHO PRINCIPAL (HEADER)
+   ===================================================== */
 .header {
-    width: 100%;
-    background-color: var(--color-bg);
-    border-bottom: 1px solid var(--color-border); /* Borda inferior */
-    position: sticky; /* header "gruda" no topo ao rola a página */
-    top: 0;
-    z-index: 100; /* garante que fique acima dos outros elementos */
+    background-color: var(--bg-header);
+    color: #ffffff;
+    padding: 18px 0;
 }
 
 .header-container {
-    max-width: 1200px; /* Largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza na página */
-    padding: 16px 24px;
-    display: flex; /* Organiza os elementos lado a lado */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: space-between; /* Logo, menu e botões ficam nas pontas */
-    gap: 24px; /* Espaço entre os elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
 }
 
-/* LOGO */
-
+/* Logo VIPCELL */
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    text-decoration: none;
+    gap: 10px;
 }
 
-.logo img {
-    width: 40px;
-    object-fit: contain; /* Mantém a proporção da imagem */
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column; /* Título em cima, subtítulo embaixo*/
-}
-
-.logo-title {
-    font-size: 16px; 
-    font-weight: 700; /* negrito */
-    color: var(--color-text);
-}
-
-.logo-subtitle {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--color-text-light);
-}
-
-/* NAVEGAÇÃO (Menu) */
-
-.main-nav {
-    display: flex;
-    align-items: center; /* Centraliza os links verticalmente */
-    gap: 32px; /* Espaço entre os links */
-}
-
-.nav-link {
-    text-decoration: none; /* Remove a estilização padrão dos links *
-    */
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text-light);
-    transition: color 0.2s ease; /* Muda a cor suavemente */
-}
-
-.nav-link:hover {
-    color: var(--color-text); /* Muda de cor ao passar o mouse */
-}
-
-.nav-link.active {
-    color: var(--color-primary); /* Destaca o link da página atual */
+.logo-sub {
+    display: block;
+    font-size: 9px;
     font-weight: 600;
+    letter-spacing: 1.6px;
+    color: #cbd5e1;
 }
 
-/* AÇÕES HEADER (Busca + botão) */
-.header-actions {
+.logo-brand {
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 0.95;
+    color: #ffffff;
+}
+
+.logo-tagline {
+    display: block;
+    font-size: 7.5px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.logo-icon {
+    width: 34px;
+    height: 46px;
+    border: 2px solid var(--cyan-highlight);
+    border-radius: 6px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    color: var(--cyan-highlight);
+    position: relative;
+}
+
+/* Barra de Pesquisa Central */
+.search-form {
+    flex: 1;
+    max-width: 560px;
+    display: flex;
+    background: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 42px;
+}
+
+.search-form input {
+    flex: 1;
+    border: none;
+    padding: 0 16px;
+    font-size: 13.5px;
+    color: var(--text-main);
+    outline: none;
+}
+
+.search-form input::placeholder {
+    color: #94a3b8;
+}
+
+.search-form select {
+    border: none;
+    border-left: 1px solid #e2e8f0;
+    padding: 0 14px;
+    font-size: 12.5px;
+    color: #475569;
+    background: #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-form button {
+    background-color: var(--blue-btn);
+    color: #ffffff;
+    border: none;
+    width: 46px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.search-form button:hover {
+    background-color: var(--blue-btn-hover);
+}
+
+/* Meu Carrinho */
+.cart-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-icon {
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.cart-box small {
+    display: block;
+    font-size: 11px;
+    color: #cbd5e1;
+}
+
+.cart-box strong {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* =====================================================
+   3. MENU DE NAVEGAÇÃO (NAVBAR)
+   ===================================================== */
+.navbar {
+    background-color: var(--bg-navbar);
+    color: #ffffff;
+    font-size: 13.5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.btn-categories {
+    background-color: var(--blue-btn);
+    color: #ffffff;
+    padding: 11px 18px;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav-list {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-list a {
+    padding: 12px 0;
+    display: inline-block;
+    color: #e2e8f0;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-list a:hover {
+    color: var(--cyan-highlight);
+}
+
+.nav-list a.active {
+    color: #ffffff;
+    border-bottom: 2px solid var(--cyan-highlight);
+}
+
+/* =====================================================
+   4. BANNER PRINCIPAL (HERO)
+   ===================================================== */
+.hero {
+    background: radial-gradient(circle at 72% 48%, #0e3866 0%, #051324 55%, #030b14 100%);
+    color: #ffffff;
+    padding: 64px 0 28px;
+    position: relative;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 32px;
+}
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+
+.hero-text {
+    font-size: 16px;
+    color: #cbd5e1;
+    margin-bottom: 28px;
+    max-width: 420px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--blue-btn);
+    color: #ffffff;
+    padding: 12px 26px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-hero:hover {
+    background-color: var(--blue-btn-hover);
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+}
+
+.hero-image-placeholder {
+    border: 1px dashed rgba(56, 189, 248, 0.35);
+    border-radius: 12px;
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--cyan-highlight);
+    background: rgba(14, 56, 102, 0.2);
+}
+
+.hero-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 34px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.dot.active {
+    background: #ffffff;
+    width: 8px;
+    height: 8px;
+}
+
+/* =====================================================
+   5. CATEGORIAS EM DESTAQUE
+   ===================================================== */
+.categories {
+    padding: 44px 0 18px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.link-arrow {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--blue-btn);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.link-arrow:hover {
+    text-decoration: underline;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 16px;
 }
 
-.search-box {
-    position: relative; /* serve para posicionar o ícone da lupa */
+.category-card {
+    border: 1px solid var(--border-card);
+    border-radius: 8px;
+    padding: 14px 12px 16px;
+    text-align: center;
+    background: #ffffff;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--blue-btn);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.category-img {
+    height: 105px;
+    background-color: var(--bg-card-img);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+.category-img img {
+    max-width: 80%;
+    max-height: 85px;
+    object-fit: contain;
+}
+
+.category-img .material-symbols-outlined {
+    font-size: 40px;
+}
+
+.category-card h3 {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* =====================================================
+   6. PRODUTOS EM DESTAQUE (CARROSSEL)
+   ===================================================== */
+.products {
+    padding: 28px 0 36px;
+}
+
+.carousel {
+    position: relative;
     display: flex;
     align-items: center;
 }
 
-.search-box input {
-    font-family: var(--font-main);
-    width: 220px;
-    padding: 10px 40px 10px 16px; /* Espaço extra à direita para caber o icone */
-    border: 1px solid var(--color-border);
+.carousel-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s;
+}
+
+.carousel-btn:hover {
+    background: var(--blue-btn);
+    color: #ffffff;
+    border-color: var(--blue-btn);
+}
+
+.carousel-btn.prev { left: -16px; }
+.carousel-btn.next { right: -16px; }
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    width: 100%;
+}
+
+.product-card {
+    border: 1px solid var(--border-card);
     border-radius: 8px;
-    font-size: 14px;
-    outline: none; /* Remove a borda azul pdrão do navegador */
+    padding: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    transition: box-shadow 0.2s;
 }
 
-.search-box input:focus {
-    border-color: var(--color-primary);
+.product-card:hover {
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
 }
 
-.search-box input::placeholder {
-    color: var(--color-text-light);
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--blue-btn);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 4px;
+    z-index: 1;
 }
 
-.search-icon {
-    position: absolute; /* Posiciona o ícone sobre o input */
-    right: 14px;
-    fill: var(--color-text-light); /* Cor do ícone SVG */
-    pointer-events: none; /* Impede o ícone de atrapalhar o clique no input */
-    width: 25px; /* Tamanho do ícone de pesquisa */
-}
-
-.btn-primary {
-    font-family: var(--font-main);
-    background-color: var(--color-primary);
-    color: #FFF;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer; /* Mostra que é clicável */
-    white-space: nowrap; /* Impede o texto do botão de quebrar linha */
-}
-
-.btn-primary:hover {
-    background-color: var(--color-primary-dark);
-}
-
-/* Oculta o menu hamburguer para telas desktop */
-.hamburguer {
-    display: none;
-    font-size: 24px;
+.btn-favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     background: none;
     border: none;
+    color: #94a3b8;
     cursor: pointer;
-    color: var(--color-text);
+    z-index: 1;
 }
 
-/* Telas pequenas (celulares) */
-@media (max-width: 768px) {
-    .search-box {
-        display: none;
-    }
+.btn-favorite:hover {
+    color: #ef4444;
+}
 
-    .main-nav {
-        display: none;
-        flex-direction: column;
-        align-items: flex-end;
-
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--color-bg);
-        border-bottom: 1px solid var(--color-border);
-        padding: 16px 24px;
-        gap: 16px;
-    }
-
-    /* Classe que o JavaScript liga/desliga */
-    .main-nav.ativo {
-        display: flex;
-    }
-
-    .btn-primary {
-        display: none;
-    }
-
-    .hamburguer {
-        display: flex;
-    }
-
-
+.product-img {
+    height: 150px;
+background-color: var(--bg-card-img);
+border-radius: 6px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 12px;
+padding: 12px;
+}
+.product-img img {
+max-width: 100%;
+max-height: 125px;
+object-fit: contain;
+}
+.product-img .material-symbols-outlined {
+font-size: 48px;
+color: #334155;
+}
+.product-title {
+font-size: 12.5px;
+font-weight: 600;
+color: #1e293b;
+line-height: 1.35;
+margin-bottom: 10px;
+min-height: 34px;
+}
+.product-price {
+margin-bottom: 10px;
+}
+.old-price {
+color: #94a3b8;
+text-decoration: line-through;
+font-size: 11.5px;
+margin-right: 5px;
+}
+.current-price {
+font-size: 15px;
+font-weight: 800;
+color: #0f172a;
+}
+.btn-add {
+width: 100%;
+background-color: var(--blue-btn);
+color: #ffffff;
+border: none;
+border-radius: 5px;
+padding: 8px 12px;
+font-size: 12.5px;
+font-weight: 600;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 6px;
+transition: background-color 0.2s;
+}
+.btn-add:hover {
+background-color: var(--blue-btn-hover);
+}
+/* =====================================================
+7. FAIXA ESCURA DE BENEFÍCIOS
+===================================================== */
+.benefits {
+padding: 10px 0 48px;
+}
+.benefits-list {
+background-color: var(--bg-header);
+color: #ffffff;
+border-radius: 10px;
+padding: 22px 28px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+}
+.benefit-item {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+.benefit-icon {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+border: 1.5px solid var(--cyan-highlight);
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--cyan-highlight);
+flex-shrink: 0;
+}
+.benefit-item strong {
+display: block;
+font-size: 13.5px;
+font-weight: 700;
+margin-bottom: 2px;
+}
+.benefit-item small {
+display: block;
+font-size: 11.5px;
+color: #cbd5e1;
+line-height: 1.3;
+}
+/* =====================================================
+8. RODAPÉ (FOOTER)
+===================================================== */
+.footer {
+background-color: var(--bg-footer);
+color: #cbd5e1;
+padding-top: 44px;
+font-size: 12.5px;
+}
+.footer-container {
+display: grid;
+grid-template-columns: 1.3fr 1.25fr 0.75fr 1fr;
+gap: 32px;
+padding-bottom: 36px;
+}
+.footer-desc {
+margin-top: 14px;
+color: #94a3b8;
+line-height: 1.55;
+font-size: 12px;
+}
+.footer h3 {
+color: #ffffff;
+font-size: 14.5px;
+font-weight: 700;
+margin-bottom: 12px;
+}
+.newsletter-form input {
+width: 100%;
+padding: 9px 12px;
+border-radius: 5px;
+border: none;
+margin: 12px 0 8px;
+font-size: 12.5px;
+outline: none;
+}
+.newsletter-form button {
+width: 100%;
+background-color: var(--blue-btn);
+color: #ffffff;
+border: none;
+padding: 9px;
+border-radius: 5px;
+font-size: 13px;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.2s;
+}
+.newsletter-form button:hover {
+background-color: var(--blue-btn-hover);
+}
+.footer-links li {
+margin-bottom: 7px;
+}
+.footer-links a {
+color: #cbd5e1;
+transition: color 0.2s;
+}
+.footer-links a:hover {
+color: var(--cyan-highlight);
+}
+.footer-info li {
+display: flex;
+align-items: flex-start;
+gap: 8px;
+margin-bottom: 9px;
+color: #cbd5e1;
+}
+.footer-info .material-symbols-outlined {
+color: #94a3b8;
+margin-top: 2px;
+}
+.footer-bottom {
+border-top: 1px solid rgba(255, 255, 255, 0.08);
+padding: 16px 0;
+font-size: 11.5px;
+color: #94a3b8;
+}
+.footer-bottom-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+}
+.footer-bottom a:hover {
+color: #ffffff;
+}
+/* =====================================================
+9. RESPONSIVIDADE (TABLET E CELULAR)
+===================================================== */
+@media (max-width: 992px) {
+.hero-container { grid-template-columns: 1fr; text-align: center; }
+.hero-text { margin: 0 auto 24px; }
+.category-list { grid-template-columns: repeat(3, 1fr); }
+.product-list { grid-template-columns: repeat(2, 1fr); }
+.benefits-list, .footer-container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+.header-container { flex-direction: column; }
+.search-form { width: 100%; }
+.navbar-container { overflow-x: auto; }
+.category-list { grid-template-columns: repeat(2, 1fr); }
+.product-list, .benefits-list, .footer-container { grid-template-columns: 1fr; }
+.carousel-btn { display: none; }
 }

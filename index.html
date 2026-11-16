@@ -1,80 +1,232 @@
-<!DOCTYPE html> 
-<!-- Declara que este documento usa HTML5 -->
-
+<!DOCTYPE html>
 <html lang="pt-BR">
-<!-- Elemento raiz da página. lang="pt-BR" define o idioma  -->
-
 <head>
-    <!-- Informações de bastidores: não aparecem diretamente na tela  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora VIPCELL - Peças e Componentes para Celular</title>
 
-    <meta charset="UTF-8"> <!-- Codificação de caracteres, garante acentos corretos -->
+    <!-- Carrega a fonte Inter do Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ativa a responsividade em dispositivos móveis -->
+    <!-- Carrega os ícones gratuitos Material Symbols (como no código modelo) -->
+    <link rel="stylesheet" href="https://googleapis.com" />
 
-    <title>VIPCELL</title> <!-- Titulo exibido na aba do navegador -->
-
-    <link rel="stylesheet" href="style.css"> 
-    <!-- Conecta o arquivo de estilos (CSS) -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!-- Importando fonte do Google Fonts -->
+    <!-- Conecta o arquivo de estilos externo -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- Tudo que o usuário vê e interage fica aqui -->
 
-    <header class="header">
-        <!-- Tag semântica: indica o cabeçalho da página -->
-
-        <div class="header-container">
-        <!-- Container que agrupa e centraliza o conteúdo do header -->
-
-            <a href="#" class="logo">
-                <!-- Logo clicável, leva para a home -->
-
-                <img src="./assets/logo.png" alt="Logo VIPCELL">
-                <!-- img: adiciona imagem / src: caminho da imagem / alt: legenda da imagem -->
-
-                <span class="logo-text">
-                    <!-- span: elemento de texto inline, não quebra linha sozinho -->
-                
+    <!-- =====================================================
+         BARRA SUPERIOR (TOP BAR)
+         Contatos rápidos, aviso de envio e links de conta
+         ===================================================== -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <span>Atendimento</span>
+                <span>
+                    <span class="material-symbols-outlined icon-xs" aria-hidden="true">call</span>
+                    (63) 98447-5234
                 </span>
-            </a>
-
-            <nav class="main-nav" class="ativo">
-                <!-- Tag semântica para o menu de navegação -->
-
-                <a href="index.html" class="nav-link active">Inicio</a>
-                <!-- a (link) para navegação | href é o caminho da página | "active" destaca a página atual -->
-
-                <a href="./produtos.html" class="nav-link">Produtos</a>
-                <a href="#" class="nav-link">Novidades</a>
-                <a href="#" class="nav-link">Promoções</a>
-                <a href="#" class="nav-link">Quem Somos</a>
-                <a href="#" class="nav-link">Contato</a>
-            </nav>
-
-            <div class="header-actions">
-                <!-- Agrupa os botões de busca e botão CTA -->
-
-                <div class="search-box">
-                    <input type="text" placeholder="O que você está procurando? ">
-                    <!-- input campo de entrada | placeholder some assim que o usuário digita -->
-
-                    <img class="search-icon" src="./assets/icons8-search.svg" alt="Ícone de pesquisa">
-                    <!-- Icone vetorial da lupa -->
-                </div>
-
-                <button class="btn-primary">Começar agora</button>
-                <!-- Botões para ações na página -->
+                <span>
+                    <span class="material-symbols-outlined icon-xs" aria-hidden="true">mail</span>
+                    contato@vipcell.com.br
+                </span>
             </div>
 
-            <!-- Botão do menu hamburguer (funciona apenas para mobile) -->
-            <button" class="hamburguer" id="btn-menu">☰</button>
+            <div class="top-bar-right">
+                <span>
+                    <span class="material-symbols-outlined icon-xs" aria-hidden="true">local_shipping</span>
+                    Envio para todo o Brasil
+                </span>
+                <a href="#" class="account-link">
+                    Entrar ou
+                    <span class="material-symbols-outlined icon-xs" aria-hidden="true">person</span>
+                    Criar conta
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         CABEÇALHO PRINCIPAL (HEADER)
+         Logo, barra de pesquisa e carrinho
+         ===================================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Logo da loja -->
+            <a href="#" class="logo">
+                <div class="logo-text">
+                    <small class="logo-sub">DISTRIBUIDORA</small>
+                    <strong class="logo-brand">VIPCELL</strong>
+                    <span class="logo-tagline">PEÇAS E COMPONENTES PARA CELULAR</span>
+                </div>
+                <span class="logo-icon">
+            </a>
+
+            <!-- Formulário de busca -->
+            <form class="search-form">
+                <input type="text" placeholder="O que você está procurando?" aria-label="Buscar produtos">
+                <select aria-label="Selecionar categoria">
+                    <option>Todas as categorias</option>
+                    <option>Displays</option>
+                    <option>Baterias</option>
+                    <option>Conectores</option>
+                    <option>Câmeras</option>
+                    <option>Carcaças</option>
+                    <option>Ferramentas</option>
+                </select>
+                <button type="submit" aria-label="Pesquisar">
+                    <span class="material-symbols-outlined" aria-hidden="true">search</span>
+                </button>
+            </form>
+
+            <!-- Carrinho de compras -->
+            <a href="#" class="cart-box">
+                <span class="material-symbols-outlined cart-icon" aria-hidden="true">shopping_cart</span>
+                <div>
+                    <small>Meu carrinho</small>
+                    <strong>R$ 0,00</strong>
+                </div>
+            </a>
         </div>
     </header>
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+    <!-- =====================================================
+         MENU DE NAVEGAÇÃO (NAV)
+         ===================================================== -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="btn-categories">
+                <span class="material-symbols-outlined icon-sm" aria-hidden="true">menu</span>
+                Todas as categorias
+            </a>
+
+            <ul class="nav-list">
+                <li><a href="/index.html" class="active">Início</a></li>
+                <li><a href="/produtos.html">Produtos</a></li>
+                <li><a href="/novidades.html">Novidades</a></li>
+                <li><a href="/promocoes.html">Promoções</a></li>
+                <li><a href="/quemsomos.html">Quem somos</a></li>
+                <li><a href="/contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tag semântica: o conteúdo PRINCIPAL da página -->
+    <main>
+
+        <!-- ---------------- SEÇÃO HERO ----------------
+             Primeira seção grande do site com destaque visual -->
+        <section class="hero">
+            <div class="container hero-container">
+
+                <!-- Lado esquerdo: textos e botão -->
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        As melhores peças para celular você encontra aqui!
+                    </h1>
+
+                    <p class="hero-text">
+                        Não cobrimos qualquer oferta, cobrimos qualidade.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#produtos" class="btn-hero">Ver produtos</a>
+                    </div>
+                </div>
+
+                <!-- Lado direito: espaço para a imagem do celular -->
+                <div class="hero-image">
+                    <!-- Substitua pelo caminho da sua imagem recortada (PNG) -->
+                    <div class="hero-image-placeholder">
+                        <span class="material-symbols-outlined" aria-hidden="true">developer_board</span>
+                        <p>Coloque aqui a imagem do celular (./assets/celular-banner.png)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicadores do carrossel (bolinhas) -->
+            <div class="hero-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <!-- ---------------- CATEGORIAS EM DESTAQUE ---------------- -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Categorias em destaque</h2>
+                    <a href="#" class="link-arrow">
+                        Ver todas as categorias
+                        <span class="material-symbols-outlined icon-sm" aria-hidden="true">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="category-list">
+                    <a href="#" class="category-card">
+                        <div class="category-img">
+                            <span class="material-symbols-outlined" aria-hidden="true">smartphone</span>
+                        </div>
+                        <h3>Displays</h3>
+                    </a>
+
+                    <a href="#" class="category-card">
+                        <div class="category-img">
+                            <span class="material-symbols-outlined" aria-hidden="true">battery_charging_full</span>
+                        </div>
+                        <h3>Baterias</h3>
+                    </a>
+
+                    <a href="#" class="category-card">
+                        <div class="category-img">
+                            <span class="material-symbols-outlined" aria-hidden="true">usb</span>
+                        </div>
+                        <h3>Conectores</h3>
+                    </a>
+
+                    <a href="#" class="category-card">
+                        <div class="category-img">
+                            <span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>
+                        </div>
+                        <h3>Câmeras</h3>
+                    </a>
+
+                    <a href="#" class="category-card">
+                        <div class="category-img">
+                            <span class="material-symbols-outlined" aria-hidden="true">phone_iphone</span>
+                        </div>
+                        <h3>Carcaças</h3>
+                    </a>
+
+                    <a href="#" class="category-card">
+                        <div class="category-img">
+                            <span class="material-symbols-outlined" aria-hidden="true">build</span>
+                        </div>
+                        <h3>Ferramentas</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------- PRODUTOS EM DESTAQUE ---------------- -->
+        <section class="products" id="produtos">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Produtos em destaque</h2>
+                    <a href="#" class="link-arrow">
+                        Ver todos os produtos
+                        <span class="material-symbols-outlined icon-sm" aria-hidden="true">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Carrossel de produtos com setas laterais -->
+                <div class="carousel">
+                    <button class="carousel-btn prev" aria-label="Produto anterior">
+                        <span class="material-symbols-outlined" aria-hidden="true">chevron_left</span>
+                    </button>
+
+                    <div class="product-list">
+                        <!-- PRODUTO 1 -->
